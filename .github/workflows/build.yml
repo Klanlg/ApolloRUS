@@ -8,7 +8,7 @@ on:
         required: true
         default: v0.4
 jobs:
-  publish_windows_x64:
+  duploz:
     runs-on: windows-latest
     permissions:
       contents: write
