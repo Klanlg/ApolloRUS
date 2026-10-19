@@ -1,0 +1,21 @@
+name: x64dbgbb
+
+on:
+  workflow_dispatch:
+    inputs:
+      opencv-version:
+        description: dxc
+        required: true
+        default: v0.4
+jobs:
+  publish_windows_x64:
+    runs-on: windows-latest
+    steps:
+      - uses: meeDamian/github-release@2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ env.opencv-version }}
+          name: My Creative Name
+          files: >
+            Dockerfile
+            action.yml
