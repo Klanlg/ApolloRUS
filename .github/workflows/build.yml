@@ -1,4 +1,4 @@
-name: x64dbgbb
+name: fuplo
 
 on:
   workflow_dispatch:
@@ -10,6 +10,8 @@ on:
 jobs:
   publish_windows_x64:
     runs-on: windows-latest
+    permissions:
+      contents: write
     steps:
       - name: settuna
         run: |
